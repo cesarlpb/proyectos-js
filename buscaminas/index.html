@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buscaminas</title>
+  <style>
+    #container {
+      background-color: gray;
+      min-height: 1rem;
+      width: fit-content;
+      padding: 1rem;
+    }
+    .row {
+      display: flex;
+    }
+    .row > div {
+      border: 1px solid black;
+      padding: 0.5rem;
+    }
+    body {
+      background-color: beige;
+    }
+  </style>
+</head>
+<body>
+  <h1>Buscaminas</h1>
+  <div id="container">
+    <div id="row-1" class="row">
+      <div id="1-1" onclick="console.log('click en id: ' + this.id);">💣</div>
+      <div id="1-2" onclick="console.log('click en id: ' + this.id);">💣</div>
+      <div id="1-3" onclick="console.log('click en id: ' + this.id);">💣</div>
+      <div id="1-4" onclick="console.log('click en id: ' + this.id);">💣</div>
+      <div id="1-5" onclick="console.log('click en id: ' + this.id);">💣</div>
+      <div id="1-6" onclick="console.log('click en id: ' + this.id);">💣</div>
+      <div id="1-7" onclick="console.log('click en id: ' + this.id);">💣</div>
+      <div id="1-8" onclick="console.log('click en id: ' + this.id);">💣</div>
+      <div id="1-9" onclick="console.log('click en id: ' + this.id);">💣</div>
+      <div id="1-10" onclick="console.log('click en id: ' + this.id);">💣</div>
+    </div>
+    <div class="row">
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+    </div>
+    <div class="row">
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+    </div>
+    <div class="row">
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+    </div>
+    <div class="row">
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+    </div>
+    <div class="row">
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+    </div>
+    <div class="row">
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+    </div>
+    <div class="row">
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+    </div>
+    <div class="row">
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+    </div>
+    <div class="row">
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+      <div>💣</div>
+    </div>
+  </div>
+
+  <script>
+    const row1 = document.getElementById("row-1");
+    const divs = row1.getElementsByTagName("div");
+    // repetir para las siguientes filas
+
+    function click() {
+      console.log("test");
+    }
+  </script>
+</body>
+</html>
