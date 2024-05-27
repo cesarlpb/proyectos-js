@@ -25,6 +25,20 @@
 </head>
 <body>
   <h1>Buscaminas</h1>
+
+  <div id="marcador">0</div>
+  <div id="cuentra-atras">120 s</div>
+  <div>
+    <h2>Dimensiones</h2>
+    <label id="ancho">Ancho:</label>
+    <input id="ancho-input" type="number">
+    <br>
+    <label id="largo">Largo:</label>
+    <input id="largo-input" type="number">
+    <br>
+    <input type="submit" onclick="crearTablero()" value="Crear tablero">
+  </div>
+  <hr>
   <div id="container">
     <div id="row-1" class="row">
       <div id="1-1" onclick="console.log('click en id: ' + this.id);">💣</div>
@@ -155,6 +169,13 @@
 
     function click() {
       console.log("test");
+    }
+
+    function crearTablero(){
+      let ancho = document.getElementById("ancho-input").value;
+      let largo = document.getElementById("largo-input").value;
+      console.log("Crear tablero");
+      console.log("Datos recibidos:", ancho, largo);
     }
   </script>
 </body>
