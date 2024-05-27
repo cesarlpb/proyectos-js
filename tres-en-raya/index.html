@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 en Raya</title>
+    <style>
+        /* Estilos básicos para el tablero de juego */
+        #board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 2px;
+        }
+        .cell {
+            background-color: #ddd;
+            border: 1px solid #aaa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            cursor: pointer;
+        }
+        .cell:hover {
+            background-color: #ccc;
+        }
+        body {
+          background-color: beige;
+        }
+        #board {
+          display: flex;
+          flex-direction: column;
+        }
+        .row {
+          display: flex;
+        }
+    </style>
+</head>
+<body>
+    <h1>3 en raya</h1>
+    <div id="board">
+        <!-- Aquí irá el tablero -->
+        <div class="row">
+          <div>X</div>
+          <div>O</div>
+          <div>X</div>
+        </div>
+        <div class="row">
+          <div>X</div>
+          <div>O</div>
+          <div>X</div>
+        </div>
+        <div class="row">
+          <div>X</div>
+          <div>O</div>
+          <div>X</div>
+        </div>
+    </div>
+
+    <script>
+        // Aquí empezarás a escribir el código de tu juego
+
+        // Pista: Crea una matriz que represente el tablero de juego y llénala con valores iniciales.
+
+        // Pista: Implementa una función para dibujar el tablero en el HTML.
+
+        // Pista: Agrega lógica para permitir que los jugadores hagan movimientos y actualicen el tablero.
+
+        // Pista: Desarrolla la lógica para verificar si hay un ganador después de cada movimiento.
+
+        // Pista: Agrega la capacidad de reiniciar el juego y mantener el puntaje si lo deseas.
+    </script>
+</body>
+</html>
