@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piedra, papel, tijera</title>
+  <style>
+    body {
+      background-color: beige;
+    }
+  </style>
+</head>
+<body>
+  <h1>Piedra, papel, tijeras</h1>
+
+  <label for="eleccion-jugador">Elige una opción:</label>
+  <br>
+  <select name="eleccion-jugador" id="eleccion-jugador">
+    <option value="" selected></option>
+    <option value="papel">Piedra</option>
+    <option value="papel">Papel</option>
+    <option value="papel">Tijeras</option>
+  </select>
+  <input type="submit" name="Jugar" id="jugar" onclick="jugar()" value="Jugar">
+
+  <script>
+    const opciones = ["piedra", "papel", "tijeras"];
+    const LEN = opciones.length; // 3
+    let indiceAletorio = parseInt(Math.random() * LEN); // 0, 1, 2
+    let eleccionMaquina = opciones[indiceAletorio];
+    console.log("La máquina eligió:", eleccionMaquina);
+
+
+    // Buscamos el elemento <select>
+    const select = document.getElementById('eleccion-jugador');
+    let option = ""
+    // Usamos un evento para actualizar en option el valor
+    // seleccionado en todo momento:
+    select.addEventListener('change',
+      function(){
+        var selectedOption = this.options[select.selectedIndex];
+        console.log('Seleccionado' + ': ' + selectedOption.text);
+        option = selectedOption.text;
+      });
+    
+    function jugar(){
+      console.log("El jugador ha elegido:", option);
+    }
+  </script>
+</body>
+</html>

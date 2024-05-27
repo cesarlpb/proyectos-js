@@ -16,3 +16,10 @@ Proyectos con HTML, CSS, JS
 - Vas colocando un caracter en cada intento y se rellena la palabra poco a poco
 - Si gastas los intentos, pierdes
 - Si completas la palabras, ganas
+
+## Piedra, papel, tijera
+
+- Dos jugadores
+- Por turnos, eligen piedra papel o tijera
+- Se calcula quien gana
+- Volver a jugar
