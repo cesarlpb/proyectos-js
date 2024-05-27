@@ -9,3 +9,10 @@ Proyectos con HTML, CSS, JS
 - Si sale número es una pista
 - Si se dejan solo las bombas sin clicar, se gana
 
+## Ahorcado
+
+- Hay una palabra a adivinar
+- Hay un número de intentos
+- Vas colocando un caracter en cada intento y se rellena la palabra poco a poco
+- Si gastas los intentos, pierdes
+- Si completas la palabras, ganas

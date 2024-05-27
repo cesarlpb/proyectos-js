@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahorcado</title>
+  <style>
+    body {
+      background-color: beige;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ahorcado</h1>
+
+  <p>Pista:</p>
+  <p id="pista"></p>
+
+  <input type="text" name="letra" id="letra-seleccionada">
+  <input type="submit" onclick="probarLetra()" value="Probar letra">
+  
+  <script>
+    const palabrasSecretas = ["manzana", "pera", "uva"];
+    let len = palabrasSecretas.length; // 3
+    let indiceAleatorio = parseInt(Math.random() * len);
+    let palabraSecreta = palabrasSecretas[indiceAleatorio];
+
+    // Sacamos _ para cada caracter de la palabra:
+    let numGuiones = palabraSecreta.length;
+    let guiones = "_ ".repeat(numGuiones);
+    document.getElementById("pista").innerText = guiones;
+
+    function probarLetra(){
+      const letraSeleccionada = document.getElementById("letra-seleccionada").value;
+      console.log("letra seleccionada:", letraSeleccionada);
+      let letraEstaEnPalabraSecreta = palabraSecreta.includes(letraSeleccionada);
+      console.log("Está en palabra secreta?", letraEstaEnPalabraSecreta);
+      if (letraEstaEnPalabraSecreta) {
+        // llamar a fn que actualiza pista
+      } else {
+        // dibujar ahorcado
+      }
+    }
+
+    /*
+          _______
+     |/      |
+     |      (_)
+     |      \|/
+     |       |
+     |      / \
+     |
+    _|___
+    */
+  </script>
+</body>
+</html>
