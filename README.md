@@ -23,3 +23,24 @@ Proyectos con HTML, CSS, JS
 - Por turnos, eligen piedra papel o tijera
 - Se calcula quien gana
 - Volver a jugar
+
+## Space invaders
+
+- Vienen aliens hacia la nave
+- La nave se mueve izq der y dispara solo hacia arriba
+- Se gana por puntos o pasando niveles
+- Se pierde si te quedas sin vidas
+
+## 3 en raya
+
+- Por turnos, dos jugadores
+- Colocan X o la O
+- Se debería poder determinar quién gana, también puede haber empate
+- Volver a jugar
+
+## Snake
+
+- Por turnos, dos jugadores
+- Colocan X o la O
+- Se debería poder determinar quién gana, también puede haber empate
+- Volver a jugar
