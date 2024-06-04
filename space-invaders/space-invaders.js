@@ -79,6 +79,13 @@ function update() {
         return; // Detiene el juego
     }
 
+    if (youWin) {
+        context.fillStyle = "green";
+        context.font = "40px monospace";
+        context.fillText("You win!", boardWidth / 2 - 100, boardHeight / 2);
+        return; // Detiene el juego
+    }
+
 
     requestAnimationFrame(update);
 
@@ -136,12 +143,10 @@ function update() {
             break;
         }
     }
-    // Mostramos mensaje de partida ganada
+    // Verificamos si hemos matado todos los aliens
     if (alienCount === 0) {
-        context.fillStyle = "green";
-        context.font = "40px monospace";
-        context.fillText("You win!", boardWidth / 2 - 100, boardHeight / 2);
-        return; // Detiene el juego
+        youWin = true;
+        return;
     }
 
 }
