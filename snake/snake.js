@@ -3,7 +3,6 @@ const canvas = document.getElementById('juegoSerpiente');
 const ctx = canvas.getContext('2d');
 const botonSt = document.getElementById('botonStart');
 const puntosDisplay = document.getElementById('puntos');
-const selectorVeloz = document.getElementById('veloz');
 const cuadrado = 20;
 // Empieza el juego con la serpiente en medio de la pantalla
 let serpiente = [{x: canvas.width/2, y: canvas.height/2}];
@@ -16,6 +15,7 @@ let juego;
 let puntos = 0;
 ctx.fillStyle = "gray";
 ctx.fillRect(0, 0, canvas.width, canvas.height);
+let selectorVeloz = document.getElementById('veloz');
 
 // Eventos listener para boton Start del juego y flechas teclado
 botonSt.addEventListener('click', empiezoJ);
@@ -36,6 +36,12 @@ function empiezoJ() {
   
   // Velocidad juego. Convierte este valor de cadena a un número entero
     velo = parseInt(selectorVeloz.value);
+
+  // Optiene texto del option
+    combo = document.getElementById('veloz');
+    nivel = combo.options[combo.selectedIndex].text;
+    salida = ("Puntuación de: " + puntos + " Manzanas - Nivel Juego: " + nivel);
+    document.getElementById("output").innerHTML = salida;
 
   // Empieza juego si se selecciona velocidad, y define la frecuencia actualización juego
   if (velo >= 50) {
@@ -96,6 +102,11 @@ function dibujo() {
   if (cabeza.x === manzana.x && cabeza.y === manzana.y) {
     manzana = {x: Math.floor(Math.random() * 20) * cuadrado, y: Math.floor(Math.random() * 20) * cuadrado};
     puntos++;
+    salida = ("Puntuación de: " + puntos + " Manzanas - Nivel Juego: " + nivel);
+    document.getElementById("output").innerHTML = salida;
+    if (puntos % 50 === 0) {
+      levelUp();
+    }
   } else {
     serpiente.pop();
   }
@@ -103,8 +114,18 @@ function dibujo() {
   // Comprueba si la serpiente colisiona con el limite o ella misma, entonces finaliza juego
   if (cabeza.x < 0 || cabeza.x >= canvas.width || cabeza.y < 0 || cabeza.y >= canvas.height || colision()) {
     clearInterval(juego);
-    alert("Fin del Juego !!! Puntuación de " + puntos + " Manzanas !!!");
+    alert("Fin del Juego !!! ");
   }
+}
+
+// Función para subir nivel cada 50 manzanas
+function levelUp() {
+  velo++;
+  velo = Math.max(velo - 10, 50); 
+  clearInterval(juego);
+  juego = setInterval(dibujo, velo);
+  output = ("Puntuación de: " + puntos + " Manzanas - Nivel Juego: " + nivel);
+  document.getElementById("output").innerHTML = output;
 }
 
 // Comprueba colision con ella misma:
