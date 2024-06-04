@@ -69,7 +69,7 @@ function dibujo() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   // Background blanco
-   ctx.fillStyle = patron;
+  ctx.fillStyle = patron;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   // Cuadrado manzana
