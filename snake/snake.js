@@ -14,12 +14,7 @@ let dy = 0;
 let manzana = {x: Math.floor(Math.random() * 20) * cuadrado, y: Math.floor(Math.random() * 20) * cuadrado};
 let juego;
 let puntos = 0;
-let imagen = new Image();
-imagen.src = "cesped.png";
-let patron = ctx.createPattern(imagen, "no-repeat");
-
-// Background cesped
-ctx.fillStyle = patron;
+ctx.fillStyle = "gray";
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 // Eventos listener para boton Start del juego y flechas teclado
@@ -68,7 +63,10 @@ function dibujo() {
   // Borra todo el area del cuadrado
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  // Background blanco
+  // Background cesped
+  let imagen = new Image();
+  imagen.src = "cesped.png";
+  let patron = ctx.createPattern(imagen, "no-repeat");
   ctx.fillStyle = patron;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
