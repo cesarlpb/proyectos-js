@@ -14,9 +14,12 @@ let dy = 0;
 let manzana = {x: Math.floor(Math.random() * 20) * cuadrado, y: Math.floor(Math.random() * 20) * cuadrado};
 let juego;
 let puntos = 0;
+let imagen = new Image();
+imagen.src = "cesped.png";
+let patron = ctx.createPattern(imagen, "no-repeat");
 
-// Background blanco
-ctx.fillStyle = 'white';
+// Background cesped
+ctx.fillStyle = patron;
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 // Eventos listener para boton Start del juego y flechas teclado
@@ -66,7 +69,7 @@ function dibujo() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   // Background blanco
-  ctx.fillStyle = 'white';
+   ctx.fillStyle = patron;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   // Cuadrado manzana
@@ -78,7 +81,7 @@ function dibujo() {
   ctx.strokeRect(manzana.x, manzana.y, cuadrado, cuadrado);
 
   // Cuadrado serpiente
-  ctx.fillStyle = 'green';
+  ctx.fillStyle = 'white';
   serpiente.forEach((segment) => {
   ctx.fillRect(segment.x, segment.y, cuadrado, cuadrado);
   
