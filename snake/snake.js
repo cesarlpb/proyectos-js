@@ -43,8 +43,8 @@ function empiezoJ() {
     salida = ("Puntuación de: " + puntos + " Manzanas - Nivel Juego: " + nivel);
     document.getElementById("output").innerHTML = salida;
 
-  // Empieza juego si se selecciona velocidad, y define la frecuencia actualización juego
-  if (velo >= 50) {
+  // Empieza juego si se selecciona velocidad, y define el intervalo actualización juego
+  if (velo >= 100 && velo <= 200) {
     juego = setInterval(dibujo, velo);
   }
 }
@@ -99,12 +99,13 @@ function dibujo() {
   serpiente.unshift(cabeza);
 
   // Comprueba si la serpiente come manzana sino elimina última coordenada del array y la devuelve
+  // cada diez manzanas sube un nivel
   if (cabeza.x === manzana.x && cabeza.y === manzana.y) {
     manzana = {x: Math.floor(Math.random() * 20) * cuadrado, y: Math.floor(Math.random() * 20) * cuadrado};
     puntos++;
     salida = ("Puntuación de: " + puntos + " Manzanas - Nivel Juego: " + nivel);
     document.getElementById("output").innerHTML = salida;
-    if (puntos % 50 === 0) {
+    if (puntos % 10 === 0) {
       levelUp();
     }
   } else {
@@ -118,12 +119,20 @@ function dibujo() {
   }
 }
 
-// Función para subir nivel cada 50 manzanas
+// Función para subir nivel cada 10 manzanas
 function levelUp() {
-  velo++;
-  velo = Math.max(velo - 10, 50); 
   clearInterval(juego);
   juego = setInterval(dibujo, velo);
+  velo = Math.max(velo - 50, 100)
+   if (velo === 200) {
+    nivel = "Facil";
+  } else if (velo === 150) {
+    nivel =  "Medio";
+  } else if (velo === 100) {
+    nivel =  "Difícil";
+  } else {
+    nivel = nivel;
+  }
   output = ("Puntuación de: " + puntos + " Manzanas - Nivel Juego: " + nivel);
   document.getElementById("output").innerHTML = output;
 }

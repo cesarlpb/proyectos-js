@@ -24,7 +24,7 @@ section {
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
-  height: 82vh;
+  height: 80vh;
   width: 100%;
 }
 
@@ -37,7 +37,7 @@ section canvas {
 
 section button {
   position: absolute;
-  padding:2.2dvh;
+  padding:2vh;
   left: 55%;
   top: 3.5%;
   border: 2px solid black;
@@ -52,11 +52,10 @@ section div{
   border: 2px solid black;
 }
 
- p{
-  position: relative;
-  padding: 1vh;
-  left: 36.8%;
-  width: 425px;
+ footer{
+  display:flex; 
+  justify-content:center;
+  padding: 2vh;
   background-color: white;
   border: none;
   color:black;
